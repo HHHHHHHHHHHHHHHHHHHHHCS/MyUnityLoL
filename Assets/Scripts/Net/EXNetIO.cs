@@ -1,0 +1,19 @@
+﻿using UnityEngine;
+using System.Collections;
+
+public static class ExNetIO
+{
+    /// <summary>
+    /// 扩展MonoBehaviour 发送消息
+    /// </summary>
+    /// <param name="mono"></param>
+    /// <param name="type"></param>
+    /// <param name="area"></param>
+    /// <param name="command"></param>
+    /// <param name="message"></param>
+    public static void WriteMessage(this MonoBehaviour mono, byte type, int area, int command, object message)
+    {
+        NetIO.Instance.Write(type, area, command, message);
+    }
+
+}
